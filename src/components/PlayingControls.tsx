@@ -46,7 +46,7 @@ export default function PlayingControls() {
       <audio
         loop={isCurrentSongLooping}
         ref={audioRef}
-        src={`./gdMusic/audio/${currentSong?.name}.wav`}
+        src={`./audio/${currentSong?.name}.wav`}
         autoPlay={isCurrentSongPlaying}></audio>
       <div className="margin  ml-10 mr-10 mb-5">
         <div className="flex justify-between">
