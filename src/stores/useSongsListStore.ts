@@ -25,7 +25,7 @@ export const useSongsStore = create<useSongsStore>((set) => ({
     setSongsLoaded: (loaded) => set({ songsLoaded: loaded }),
     fetchSongs: async () => {
       try {
-        const response = await fetch('/songs.json');
+        const response = await fetch('/gdMusic/songs.json');
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
@@ -33,7 +33,6 @@ export const useSongsStore = create<useSongsStore>((set) => ({
 
         set({ initialSongs: data });
         set({ songsLoaded: true });
-        console.log('Fetched songs:', data);
       } catch (error) {
         console.error('Failed to fetch songs:', error);
         true;
@@ -41,7 +40,6 @@ export const useSongsStore = create<useSongsStore>((set) => ({
     },
     addFavList: (song) =>
       set((state) => {
-        console.log('favs', state.favList);
         if (state.favList.find((fav) => fav.id === song.id)) {
           return state;
         }

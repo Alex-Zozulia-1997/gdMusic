@@ -1,11 +1,7 @@
-import { useEffect } from 'react';
 import { useAudioStore } from '../stores/useAudioStore';
 
 export default function PlayingInfo() {
   const currentSong = useAudioStore((state) => state.currentSong);
-  useEffect(() => {
-    console.log('currentSong', currentSong);
-  }, [currentSong]);
 
   return (
     <div

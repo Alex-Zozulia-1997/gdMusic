@@ -9,7 +9,6 @@ export default function SongList() {
   const { inputRef } = useInput();
   const [search, setSearch] = useState('');
   const songsLoaded = useSongsStore((state) => state.songsLoaded);
-  console.log('listOfSongs', listOfSongs);
   useEffect(() => {
     fetchSongs();
   }, [fetchSongs]);
@@ -20,7 +19,6 @@ export default function SongList() {
         <input
           onChange={(e) => {
             setSearch(e.target.value);
-            console.log('search', search);
           }}
           ref={inputRef}
           className="opacity-90 h-12 w-full  rounded-lg bg-gradient-to-r from-neutral-400 p-3 to-transparent bg-transparent text-white text-xl"

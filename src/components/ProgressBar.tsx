@@ -4,7 +4,6 @@ import { useAudioStore } from '../stores/useAudioStore';
 export default function ProgressBar() {
   const currentSongTime = useAudioStore((state) => state.currentSongTime);
   const duration = useAudioStore((state) => state.currentSongDuration);
-  // console.log('duration', duration);
   const setCurrentSongTime = useAudioStore(
     (state) => state.actions.setCurrentSongTime
   );
@@ -23,7 +22,6 @@ export default function ProgressBar() {
     .padStart(2, '0')}`;
   const [userFriendlyTime, setUserFriendlyTime] = useState('');
   useEffect(() => {
-    // console.log('currentSongTime', currentSongTime);
     setUserFriendlyTime(
       `${Math.floor(currentSongTime / 60)}:${Math.floor(currentSongTime % 60)
         .toString()

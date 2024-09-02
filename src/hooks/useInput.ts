@@ -11,12 +11,10 @@ export const useInput = () => {
     if (!inputElement) return;
 
     const handleFocus = () => {
-      console.log('Input focused. Removing global keydown listener.');
       setIsInputFocused(true);
     };
 
     const handleBlur = () => {
-      console.log('Input blurred. Adding global keydown listener.');
       setIsInputFocused(false);
     };
 

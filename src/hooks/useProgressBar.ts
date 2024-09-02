@@ -3,7 +3,6 @@ import { useAudioStore } from '../stores/useAudioStore';
 import { useAudio } from './useAudio';
 
 export const useProgressBar = (audioRef: React.RefObject<HTMLAudioElement>) => {
-  console.log('useProgressBar');
   const { handleNext } = useAudio();
   const isCurrentSongPlaying = useAudioStore(
     (state) => state.isCurrentSongPlaying
